@@ -38,8 +38,9 @@ mv $dirpath/nvim ~/.config/
 # Bash setup:
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)" --prefix=/usr/local
 cp /usr/local/share/oh-my-bash/bashrc ~/.bashrc
+echo "OMB_USE_SUDO=false" >> ~/.bashrc
 echo "alias vim=nvim" >> ~/.bashrc
-echo "$HOME/.cargo/env" >> ~/.bashrc
+echo "source "$HOME/.cargo/env"" >> ~/.bashrc
 echo "neofetch" >> ~/.bashrc
 echo "figlet V3N0M0U5" >> ~/.bashrc
 echo "echo "Mysting is far worse than you can imagine."" >> ~/.bashrc
