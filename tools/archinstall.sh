@@ -2,7 +2,7 @@
 
 # Variables here:
 user = "guiltedrose" # put your username here!
-dirpath = "~/repos/"
+dirpath = "~/repos/" # this can be changed depending what directory you put your scripts into.
 
 # initial setup for AUR:
 cd /opt
@@ -21,12 +21,19 @@ sudo pacman -S neovim
 sudo pacman -S neofetch
 sudo pacman -S figlet
 
+# personal setup:
+cd $dirpath
+git clone https://github.com/GuiltedRose/nvim.git
+
+cd
+
 
 # Rust setup
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # config setup:
 mv $dirpath/configs/config.conf ~/.config/neofetch/config.conf
+mv $dirpath/nvim ~/.config/
 
 # Bash setup:
 echo "alias vim=nvim" >> ~/.bashrc
