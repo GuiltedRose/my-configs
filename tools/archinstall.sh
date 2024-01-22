@@ -36,6 +36,8 @@ mv $dirpath/configs/config.conf ~/.config/neofetch/config.conf
 mv $dirpath/nvim ~/.config/
 
 # Bash setup:
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)" --prefix=/usr/local
+cp /usr/local/share/oh-my-bash/bashrc ~/.bashrc
 echo "alias vim=nvim" >> ~/.bashrc
 echo "$HOME/.cargo/env" >> ~/.bashrc
 echo "neofetch" >> ~/.bashrc
