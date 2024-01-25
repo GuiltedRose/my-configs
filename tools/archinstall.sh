@@ -13,6 +13,9 @@ makepkg -si
 cd
 
 # Arch Setup:
+
+sudo pacman -Syu
+
 sudo pacman -R nano
 sudo pacman -R vim
 
@@ -20,6 +23,8 @@ sudo pacman -S lua
 sudo pacman -S neovim
 sudo pacman -S neofetch
 sudo pacman -S figlet
+sudo pacman -S starship
+sudo pacman -S python # make sure it's updated before doing a system update.
 
 # personal setup:
 cd $dirpath
@@ -30,18 +35,15 @@ cd
 
 # Rust setup
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
+source "$HOME/.cargo.env"
 # config setup:
-mv $dirpath/configs/config.conf ~/.config/neofetch/config.conf
+mv $dirpath/system-startup/Pictures ~/
+mv $dirpath/system-startup/configs/config.conf ~/.config/neofetch/config.conf
 mv $dirpath/nvim ~/.config/
-
+mv $dirpath/system-startup/configs/starship.toml ~/.config/
 # Bash setup:
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)" --prefix=/usr/local
-cp /usr/local/share/oh-my-bash/bashrc ~/.bashrc
-echo "OMB_USE_SUDO=false" >> ~/.bashrc
 echo "alias vim=nvim" >> ~/.bashrc
-echo "source "$HOME/.cargo/env"" >> ~/.bashrc
 echo "neofetch" >> ~/.bashrc
 echo "figlet V3N0M0U5" >> ~/.bashrc
 echo "echo "Mysting is far worse than you can imagine."" >> ~/.bashrc
-
+eval "$(starship init bash)"
