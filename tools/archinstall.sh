@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Variables here:
-user="zelda" # put your username here!
+user="guiltedrose" # put your username here!
 dirpath="~/repos" # this can be changed depending what directory you put your scripts into.
 
 # initial setup for AUR:
