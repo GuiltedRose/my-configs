@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Variables here:
-user = "zelda" # put your username here!
-dirpath = "~/repos/" # this can be changed depending what directory you put your scripts into.
+user="zelda" # put your username here!
+dirpath="~/repos" # this can be changed depending what directory you put your scripts into.
 
 # initial setup for AUR:
 cd /opt
@@ -18,7 +18,7 @@ sudo pacman -Syu
 
 sudo pacman -R nano vim
 
-sudo pacman -S lua neovim neofetch figlet starship python
+sudo pacman -S lua neovim neofetch figlet starship python nerd-fonts nodejs gcc
 
 # personal setup:
  cd  $dirpath
@@ -40,5 +40,5 @@ mv "$dirpath/system-startup/configs/starship.toml" ~/.config/
 echo "alias vim=nvim" >> ~/.bashrc
 echo "neofetch" >> ~/.bashrc
 echo "figlet V3N0M0U5" >> ~/.bashrc
-echo "My sting is far worse than you can imagine." >> ~/.bashrc
+echo "'My sting is far worse than you can imagine.'" >> ~/.bashrc
 eval "$(starship init bash)"
